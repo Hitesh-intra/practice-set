@@ -1,0 +1,32 @@
+import  java.util.Scanner;
+public class power {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("enter the number");
+        int c= sc.nextInt();
+        System.out.println("enter the power");
+        int d= sc.nextInt();
+        power(c,d-1);
+    }
+    public static  void    power (int a,int n){
+      int b=a;
+
+       while(n>=0){
+           b*=a;
+
+           n--;
+           if (n==0){
+               System.out.println(b);
+           }
+           else{
+               continue;
+           }
+
+
+
+        power(a,n-1);
+
+
+
+    }
+        }}
