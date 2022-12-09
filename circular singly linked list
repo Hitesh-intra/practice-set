@@ -1,0 +1,79 @@
+public class circular {
+    public class demo {
+        public static class linked {
+
+            class node {
+                String data;
+                node next;
+
+
+                node(String data) {
+
+                    this.data = data;
+                    this.next = null;
+
+
+                }
+            }
+
+            public node head = null;
+            public node tail = null;
+
+            public void addfirst(String hello) {
+                node newnode = new node(hello);
+
+                if (head == null) {
+
+                    head = newnode;
+                    tail = head;
+                } else {
+
+                    node temp = head;
+                    head = newnode;
+                    head.next = temp;
+                }
+
+
+            }
+
+            public void display() {
+
+                node currnode = head;
+                if (head == null) {
+                    System.out.println("link list is empty");
+                    return;
+                }
+
+
+                while (currnode.next != null) {
+
+                    System.out.print(currnode.data+"->");
+                    currnode = currnode.next;
+
+
+                }
+                if (currnode.next==null){//now currentnod is in last node then after thst we will make it circular
+                    currnode.next=head;
+                    System.out.print(currnode.next.data);
+                }
+
+
+
+               // System.out.println("your circular link list is end now ");
+
+            }
+            public static void main(String[] args) {
+                linked li =new linked();
+                li.addfirst("jnrjb");
+                li.addfirst("regfd");
+                li.addfirst("hdh");
+                li.addfirst("njdnj");
+                li.display();
+
+            }
+
+        }
+
+
+    }
+
